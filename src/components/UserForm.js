@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { withFormik, Form, Field } from "formik";
 import * as yup from "yup";
+import { Button, FormGroup } from 'reactstrap'
+
 
 
 
@@ -10,45 +12,47 @@ const UserForm = ({ touched, errors, status }) => {
     const [user, setUser] = useState({});
     const [userList, setUserList] = useState([])
 
-    
+
     useEffect(() => {
         status && setUser(status);
         status && setUserList(userList => [...userList, status])
     }, [status]);
-    
-    
-    
+
+
+
 
     console.log(userList);
     return (
         <div className='form'>
             <Form>
+                <FormGroup col>
                 <label>
-                    Name:<br />
+                    Name<br />
                     <Field name='name' type='text' placeholder='Name' /><br />
                 </label>
+                </FormGroup>
+                <FormGroup col>
                 <label>
-                    password:<br />
+                    Password<br />
                     <Field name='password' type='password' placeholder='Password' /><br />
                 </label>
+                </FormGroup>
+                <FormGroup col>
                 <label>
-                    Email:<br />
+                    Email<br />
                     <Field name='email' type='email' placeholder='email' /><br />
                 </label>
+                </FormGroup>
+                <FormGroup col>
                 <label>
-                    Term Of Service:
+                    Term Of Service
                 <Field type="checkbox" name="termOfService" /><br />
                 </label>
+                </FormGroup>
 
 
-                <button>Sumit</button>
+                <Button>Sumit</Button>
             </Form>
-
-            {user.name && (
-                <ul key={user.id}>
-                    <li>Name: {user.name}</li>
-                </ul>
-            )}
         </div>
     )
 }
