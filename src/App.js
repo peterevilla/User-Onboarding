@@ -8,7 +8,7 @@ import UserForm from './components/UserForm';
 function App() {
   return (
     <div className="App">
-      Hello World!
+      <header><h1>Register!</h1></header>
       <UserForm/>
     </div>
   );
