@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FaUserCircle } from "react-icons/fa";
 
 
 
@@ -9,13 +10,13 @@ console.log(props)
     return(
     
 
-        <ol>
-
+        <div>
+            
             {props.userList.map(ele => (
 
-            <li>{ele.name}, Email: {ele.email}</li>
+            <p><FaUserCircle/>&nbsp;{ele.name}, Email: {ele.email}</p>
             ))}
-        </ol>
+        </div>
     )
 };
 
